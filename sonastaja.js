@@ -31,9 +31,9 @@ function intialize() {
     }
 
     let keyboard = [
-        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-        ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
-        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫" ]
+        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Ü", "Õ"],
+        ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö", "Ä"],
+        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Ž", "Š", "⌫" ]
     ]
 
     for (let i = 0; i < keyboard.length; i++) {
