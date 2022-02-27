@@ -92,6 +92,7 @@ function processInput(e) {
         }
     }
     else if (e.code == "Backspace") {
+        document.getElementById("answer").innerText = "";
         if (0 < col && col <= width) {
             col -=1;
         }
