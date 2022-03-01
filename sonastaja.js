@@ -18,6 +18,10 @@ window.onload = function(){
     intialize();
 }
 
+function printWord() {
+    alert(word)
+}
+
 function intialize() {
 
     for (let r = 0; r < height; r++) {
