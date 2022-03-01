@@ -37,27 +37,41 @@
       <div class="modal-content">
         <div class="modal-header">
           <p class="modal-title"><br>
-          Arva ära sõna kuue katsega.<br>
-          <br>
-          Iga oletus peab olema kehtiv viietäheline sõna. Esitamiseks vajutage ENTER nuppu.<br>
-          <br>
-          Pärast iga arvamist muutub plaatide värv, mis näitab, kui lähedal teie oletus sellele sõnale oli.</p><button type="button" class="close" data-dismiss="modal">×</button>
+          <b>Kuidas mängida?</b></p><button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         <div class="modal-body">
-          <b>NÄITED</b><br>
-          <br>
-          <img src="1.png" alt="1" width="400" height="75">
+          <b>REEGLID</b><br><br>
+          <p>Arva arvuti poolt valitud sõna ära kuue katsega.</p><br>
+          <p>Iga oletus peab olema kehtiv viietäheline sõna. Esitamiseks vajutage ENTER nuppu.</p><br>
+          <p>Pärast iga arvamist muutub ruutude värv, mis näitab, kui lähedal teie oletus sellele sõnale on.</p><br>
+          <b>NÄITED</b><br><br>
+          <img src="1.png" alt="1">
           <p>A-täht on sõnas ja õiges kohas.</p>
-          <img src="2.png" alt="2" width="400" height="75">
-          <p>A-täht on sõnas, kuid vales kohas.</p>
-          <img src="3.png" alt="3" width="400" height="75">
+          <img src="2.png" alt="2">
+          <p>S-täht on sõnas, kuid vales kohas.</p>
+          <img src="3.png" alt="3">
           <p>Ükski nendest tähtedest pole sõnas üheski kohas.</p>
         </div>
       </div>
     </div>
   </div>
+
+  <div id="info" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title"><br>
+            <b>Info</b><br></p><button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <p>Inspiratsioon:&nbsp;<a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">NYT&nbsp;-&nbsp;Wordle</a></p><br>
+          <p>Sõnastikud:&nbsp;<a href="https://www.eki.ee/tarkvara/wordlist/lemmad2013.txt" target="_blank">lemmad2013.txt</a>,&nbsp;<a href="https://sonaveeb.ee/teacher-tools/#/vocabulary?page=1" target="_blank">Sonaveeb.ee</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <hr>
-  <h1 id="title" class="center-block">Sõnastaja</h1> <button class="ava" type="button" data-toggle="modal" data-target="#subscribe">?</button>
+  <button class="ava2" type="button" data-toggle="modal" data-target="#info">i</button> <h1 id="title" class="center-block">Sõnastaja</h1> <button class="ava" type="button" data-toggle="modal" data-target="#subscribe">?</button>
   <hr>
   <br>
   <div id="board" class="center-block"></div>
