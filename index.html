@@ -18,9 +18,15 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
-            $(document).ready(function(){
-                $("#subscribe").modal('show');
-            });
+      $(document).ready(function(){
+        if(document.cookie.indexOf("modal_shown") >=0){
+          //nothing
+        } else
+        {
+        $("#subscribe").modal('show');
+        document.cookie="modal_shown=seen";
+        }
+      });
   </script>
   <link rel="stylesheet" href="sonastaja.css">
   <script src="sonastaja.js"></script>
@@ -51,7 +57,7 @@
     </div>
   </div>
   <hr>
-  <h1 id="title" class="center-block">Sõnastaja</h1>
+  <h1 id="title" class="center-block">Sõnastaja</h1> <button class="ava" type="button" data-toggle="modal" data-target="#subscribe">?</button>
   <hr>
   <br>
   <div id="board" class="center-block"></div>
