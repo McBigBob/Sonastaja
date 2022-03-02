@@ -18,8 +18,15 @@ window.onload = function(){
     intialize();
 }
 
+function restart() {
+    location.reload();
+   }
+
 function printWord() {
-    alert(word)
+    var return_value=prompt("Parool:");
+    if(return_value==="6969")
+        alert(word)
+    else alert("Vale parool.")
 }
 
 function intialize() {
@@ -111,6 +118,7 @@ function processInput(e) {
     if (!gameOver && row == height) {
         gameOver = true;
         document.getElementById("answer").innerText = word;
+        document.getElementById("resa").style.display = "inline";
     }
 }
 
@@ -164,6 +172,8 @@ function update() {
         }
 
         if (correct == width) {
+            document.getElementById("answer").style.display = "none";
+            document.getElementById("resa").style.display = "inline";
             gameOver = true;
         }
     }
