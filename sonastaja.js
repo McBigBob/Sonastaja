@@ -18,13 +18,43 @@ window.onload = function(){
     intialize();
 }
 
+var x = 0;
+var y = 0;
+var emoji = "";
+
+function copy() {
+    for (let i = 0; i < 30; i++) {
+        const element = document.getElementById(`${String(y)}-${String(x)}`);
+        if (element.className == "tile present") {
+            emoji += "🟨";
+        } if (element.className == "tile absent") {
+            emoji += "🔳";
+        } if (element.className == "tile correct") {
+            emoji += "🟩";
+        } if (element.className == "tile") {
+            break;
+        }
+        x += 1;
+        if (x == 5) {
+            emoji += "\n"
+            y += 1;
+            x -= 5
+        }
+    }
+    var copyText = `sonastaja.xyz - ${String(y)}/6\n` + emoji
+    var dummy = $('<textarea id="kopeeri">').val(copyText).appendTo('body').select()
+    document.execCommand('copy')
+    kopeeri.remove()
+    alert("Kopeeriti tulemus lõikelauale.\n\n" + copyText)
+}
+
 function restart() {
     location.reload();
-   }
+}
 
 function printWord() {
     var return_value=prompt("Parool:");
-    if(return_value==="6969")
+    if(return_value==="tartu")
         alert(word)
     else alert("Vale parool.")
 }
@@ -117,6 +147,7 @@ function processInput(e) {
 
     if (!gameOver && row == height) {
         gameOver = true;
+        document.getElementById("copy").style.display = "inline";
         document.getElementById("answer").innerText = word;
         document.getElementById("resa").style.display = "inline";
     }
@@ -172,6 +203,7 @@ function update() {
         }
 
         if (correct == width) {
+            document.getElementById("copy").style.display = "inline";
             document.getElementById("answer").style.display = "none";
             document.getElementById("resa").style.display = "inline";
             gameOver = true;
@@ -196,11 +228,10 @@ function update() {
             else {
                 currTile.classList.add("absent");
                 let keyTile = document.getElementById("Key" + letter);
-                keyTile.classList.add("absent")
+                keyTile.classList.add("absent");
             }
         }
     }
-
     row += 1;
     col = 0;
 }

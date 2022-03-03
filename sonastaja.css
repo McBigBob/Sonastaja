@@ -126,6 +126,9 @@ hr {
 }
 
 h1 {
+    font-family: Arial, "Arial Black", sans-serif;
+    font-weight:bold;
+    font-size: 36px;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     margin-right: 50px;
@@ -164,19 +167,18 @@ img {
  }
 
  .ava2 {
-    margin-bottom: 20px;
-    width: 36px;
-    height: 36px;
+    height: 30px;
+    margin-bottom: 17.6px;
     font-family:'Arial Black', sans-serif;
-    font-size: 27px;
+    font-size: 20px;
     font-weight:bold;
     line-height:20px;
     align-items: center;
+    justify-content: center;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     border: 2px solid white;
     border-radius:5px;
-    padding: auto;
     background-color: transparent;
     outline: 0 !important;
  }
