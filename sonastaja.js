@@ -48,6 +48,118 @@ function copy() {
     alert("Kopeeriti tulemus lõikelauale.\n\n" + copyText)
 }
 
+function kuva_stat() {
+    var mängitud = localStorage.getItem("mängitud");
+    if (mängitud == null) {
+        mängitud = 0
+    }
+    var summa = localStorage.getItem("summa");
+    if (summa == null) {
+        summa = 0
+    }
+    var võidud = localStorage.getItem("võidud")
+    if (võidud == null) {
+        võidud = 0
+    }
+
+    document.getElementById("mängud").innerText = mängitud;
+    document.getElementById("summa").innerText = summa;
+    document.getElementById("protsent").innerText = ((Number(võidud)/Number(mängitud))*100).toFixed(0) + "%";
+
+    var üks = localStorage.getItem("1");
+    if (üks == null) {
+        üks = ""
+    }
+    var kaks = localStorage.getItem("2");
+    if (kaks == null) {
+        kaks = ""
+    }
+    var kolm = localStorage.getItem("3");
+    if (kolm == null) {
+        kolm = ""
+    }
+    var neli = localStorage.getItem("4");
+    if (neli == null) {
+        neli = ""
+    }
+    var viis = localStorage.getItem("5");
+    if (viis == null) {
+        viis = ""
+    }
+    var kuus = localStorage.getItem("6");
+    if (kuus == null) {
+        kuus = ""
+    }
+
+    document.getElementById("1").style.minWidth = `${(((Number(üks)/Number(mängitud))*100)-5).toFixed(0)}%`;
+    document.getElementById("2").style.minWidth = `${(((Number(kaks)/Number(mängitud))*100)-5).toFixed(0)}%`;
+    document.getElementById("3").style.minWidth = `${(((Number(kolm)/Number(mängitud))*100)-5).toFixed(0)}%`;
+    document.getElementById("4").style.minWidth = `${(((Number(neli)/Number(mängitud))*100)-5).toFixed(0)}%`;
+    document.getElementById("5").style.minWidth = `${(((Number(viis)/Number(mängitud))*100)-5).toFixed(0)}%`;
+    document.getElementById("6").style.minWidth = `${(((Number(kuus)/Number(mängitud))*100)-5).toFixed(0)}%`;
+
+    document.getElementById("1").innerText = üks;
+    document.getElementById("2").innerText = kaks;
+    document.getElementById("3").innerText = kolm;
+    document.getElementById("4").innerText = neli;
+    document.getElementById("5").innerText = viis;
+    document.getElementById("6").innerText = kuus;
+}
+
+function stat(tulemus) {
+    var mängitud = Number(localStorage.getItem("mängitud"));
+    var summa = Number(localStorage.getItem("summa"));
+    var võidud = Number(localStorage.getItem("võidud"));
+
+    var üks = Number(localStorage.getItem("1"));
+    var kaks = Number(localStorage.getItem("2"));
+    var kolm = Number(localStorage.getItem("3"));
+    var neli = Number(localStorage.getItem("4"));
+    var viis = Number(localStorage.getItem("5"));
+    var kuus = Number(localStorage.getItem("6"));
+
+
+    var u = 0;
+    var o = 0;
+
+    for (let i = 0; i < 30; i++) {
+        const element = document.getElementById(`${String(o)}-${String(u)}`);
+        if (element.className == "tile") {
+            break;
+        }
+        u += 1;
+        if (u == 5) {
+            o += 1;
+            u -= 5
+        }
+    }
+
+    localStorage.setItem("mängitud", (mängitud + 1));
+
+    if (tulemus == "võit") {
+        localStorage.setItem("võidud", (võidud + 1));
+        if (o == 1) {
+            localStorage.setItem("summa", (summa + 60));
+            localStorage.setItem("1", (üks + 1));
+        } if (o == 2) {
+            localStorage.setItem("summa", (summa + 50));
+            localStorage.setItem("2", (kaks + 1));
+        } if (o == 3) {
+            localStorage.setItem("summa", (summa + 40));
+            localStorage.setItem("3", (kolm + 1));
+        } if (o == 4) {
+            localStorage.setItem("summa", (summa + 30));
+            localStorage.setItem("4", (neli + 1));
+        } if (o == 5) {
+            localStorage.setItem("summa", (summa + 20));
+            localStorage.setItem("5", (viis + 1));
+        } if (o == 6) {
+            localStorage.setItem("summa", (summa + 10));
+            localStorage.setItem("6", (kuus + 1));
+        }
+    }
+}
+
 function restart() {
     location.reload();
 }
@@ -150,6 +262,7 @@ function processInput(e) {
         document.getElementById("copy").style.display = "inline";
         document.getElementById("answer").innerText = word;
         document.getElementById("resa").style.display = "inline";
+        stat()
     }
 }
 
@@ -206,6 +319,8 @@ function update() {
             document.getElementById("copy").style.display = "inline";
             document.getElementById("answer").style.display = "none";
             document.getElementById("resa").style.display = "inline";
+            var m = "võit";
+            stat(m);
             gameOver = true;
         }
     }
