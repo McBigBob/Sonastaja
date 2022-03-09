@@ -17,7 +17,11 @@ window.onload = function() {
     console.log(currentLocation)
     //v%C3%A4ljakutse=
     if (currentLocation.length > 16) {
-        word = guessList[Number(currentLocation.slice(15))].toUpperCase();
+        try {
+            word = guessList[Number(currentLocation.slice(16))].toUpperCase();
+        } catch {
+            word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+        }
     } else {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
     }
