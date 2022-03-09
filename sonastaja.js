@@ -13,7 +13,7 @@ guessList = guessList.concat(wordList);
 var word = ""
 
 window.onload = function(){
-    var currentLocation = window.location.search.substring(1);
+    var currentLocation = window.location.search.substring(12);
     if (currentLocation == "") {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
     } 
@@ -32,7 +32,7 @@ function challange() {
         alert("Sõna ei sobi.");
         return;
     } else {
-        var dummy = $('<textarea id="kopeeri">').val("https://sonastaja.xyz/?" + guessList.indexOf(tekst)).appendTo('body').select();
+        var dummy = $('<textarea id="kopeeri">').val("https://sonastaja.xyz/?väljakutse=" + guessList.indexOf(tekst)).appendTo('body').select();
         document.execCommand('copy');
         kopeeri.remove();
         alert("Väljakutse link kopeeriti lõikelauale.");
