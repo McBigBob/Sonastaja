@@ -16,23 +16,26 @@ window.onload = function(){
     var currentLocation = window.location.search.substring(1);
     if (currentLocation == "") {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-    } if (currentLocation.length > 0) {
+    } 
+    
+    if (currentLocation.length > 0) {
         word = wordList[Number(currentLocation)].toUpperCase();
     }
+    
     console.log(word);
     intialize();
 }
 
 function challange() {
-    var tekst = document.getElementById('chal').value
+    var tekst = document.getElementById('chal').value.toLowerCase();
     if (!guessList.includes(tekst)) {
-        alert("Sõna ei sobi.")
+        alert("Sõna ei sobi.");
         return;
     } else {
-        var dummy = $('<textarea id="kopeeri">').val("https://sonastaja.xyz/?" + guessList.indexOf(tekst)).appendTo('body').select()
-        document.execCommand('copy')
-        kopeeri.remove()
-        alert("Väljakutse link kopeeriti lõikelauale.")
+        var dummy = $('<textarea id="kopeeri">').val("https://sonastaja.xyz/?" + guessList.indexOf(tekst)).appendTo('body').select();
+        document.execCommand('copy');
+        kopeeri.remove();
+        alert("Väljakutse link kopeeriti lõikelauale.");
     }
 }
 
