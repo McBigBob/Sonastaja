@@ -13,13 +13,13 @@ guessList = guessList.concat(wordList);
 var word = ""
 
 window.onload = function(){
-    var currentLocation = window.location.search.substring(1);
-    if (currentLocation == "") {
+    var currentLocation = window.location.search;
+    if (currentLocation == "?") {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
     }
     if (currentLocation.length > 11) {
         try {
-            word = guessList[Number(currentLocation.substring(11))].toUpperCase();
+            word = guessList[Number(currentLocation.slice(12))].toUpperCase();
         } catch {
             word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
         }
