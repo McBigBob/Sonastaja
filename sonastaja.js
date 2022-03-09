@@ -14,10 +14,15 @@ var word = ""
 
 window.onload = function(){
     var currentLocation = window.location.search.substring(1);
-    if (currentLocation.startsWith("väljakutse=") == true) {
-        word = guessList[Number(currentLocation.substring(11))].toUpperCase();
-    } else {
+    if (currentLocation == "") {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+    }
+    if (currentLocation.length > 11) {
+        try {
+            word = guessList[Number(currentLocation.substring(11))].toUpperCase();
+        } catch {
+            word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
+        }
     }
     console.log(word);
     intialize();
