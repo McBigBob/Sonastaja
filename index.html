@@ -62,11 +62,38 @@
       <div class="modal-content">
         <div class="modal-header">
           <p class="modal-title"><br>
-            <button onclick="printWord()" class="btn default"><b>Info</b></button><br></p><button type="button" class="close" data-dismiss="modal">×</button>
+            <button onclick="printWord()" class="btn2 default"><b>Info</b></button><br></p><button type="button" class="close" data-dismiss="modal">×</button>
         </div>
         <div class="modal-body">
-          <p>Inspiratsioon:&nbsp;<a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">NYT&nbsp;-&nbsp;Wordle</a></p><br>
-          <p>Sõnastikud:&nbsp;<a href="http://www.eki.ee/tarkvara/wordlist/" target="_blank">EKI.ee</a>,&nbsp;<a href="https://sonaveeb.ee/teacher-tools/#/vocabulary?page=1" target="_blank">Sonaveeb.ee</a></p>
+          <b>STATISTIKA</b><br><br>
+          <div>
+            <div class="statistic-container">
+              <div class="statistic" id="mängud">0</div>
+              <div class="label">Korda mängitud</div>
+            </div>
+
+            <div class="statistic-container">
+              <div class="statistic" id="protsent">0</div>
+              <div class="label">Võidu protsent</div>
+            </div>
+
+            <div class="statistic-container">
+              <div class="statistic" id="summa">0</div>
+              <div class="label">Punktisumma</div>
+            </div>
+          </div><br>
+          <b>VÄLJAKUTSE</b><br><br>
+          <p>Esita sõbrale väljakutse.<br>
+          Vali sobiv viietäheline sõna, kopeeri ja saada link.</p>
+          <div class="form-inline">
+            <input class="form-control mr-1" id="chal">
+            <button onclick="challange()" class="btn btn-primary">Kopeeri</button>
+          </div><br>
+          <b>INSPIRATSIOON</b><br><br>
+          <p><a href="https://www.nytimes.com/games/wordle/index.html" target="_blank">NYT&nbsp;-&nbsp;Wordle</a></p><br>
+          <b>SÕNASTIKUD</b><br><br>
+          <p><a href="http://www.eki.ee/tarkvara/wordlist/" target="_blank">EKI.ee</a></p>
+          <p><a href="https://sonaveeb.ee/teacher-tools/#/vocabulary?page=1" target="_blank">Sonaveeb.ee</a></p>
         </div>
       </div>
     </div>
@@ -124,7 +151,7 @@
   </div>
 
   <hr>
-  <button onclick="kuva_stat()" class="ava" type="button" data-toggle="modal" data-target="#stat">☰</button> <button class="ava" type="button" data-toggle="modal" data-target="#info">i</button> <h1 id="title" class="pealkiri">Sõnastaja</h1> <button class="ava" type="button" data-toggle="modal" data-target="#subscribe">?</button>
+  <button onclick="kuva_stat()" class="ava" type="button" data-toggle="modal" data-target="#info">i</button> <h1 id="title" class="pealkiri">Sõnastaja</h1> <button class="ava" type="button" data-toggle="modal" data-target="#subscribe">?</button>
   <hr>
   <div id="board" class="vastus"></div>
   <br>
