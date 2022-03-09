@@ -14,12 +14,11 @@ var word = ""
 
 window.onload = function() {
     var currentLocation = window.location.search.slice(1);
+    console.log(currentLocation)
     if (currentLocation.length > 11) {
         word = guessList[Number(currentLocation.slice(11))].toUpperCase();
-        console.log("väljakutse");
     } else {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-        console.log("tavaline");
     }
 
     console.log(word);
