@@ -15,8 +15,9 @@ var word = ""
 window.onload = function() {
     var currentLocation = window.location.search.slice(1);
     console.log(currentLocation)
-    if (currentLocation.length > 11) {
-        word = guessList[Number(currentLocation.slice(11))].toUpperCase();
+    //v%C3%A4ljakutse=
+    if (currentLocation.length > 16) {
+        word = guessList[Number(currentLocation.slice(15))].toUpperCase();
     } else {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
     }
