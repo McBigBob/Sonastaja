@@ -13,15 +13,12 @@ guessList = guessList.concat(wordList);
 var word = ""
 
 window.onload = function(){
-    var currentLocation = window.location.search.substring(12);
-    if (currentLocation == "") {
+    var currentLocation = window.location.search.substring(1);
+    if (text.startsWith("väljakutse=")) {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-    } 
-    
-    if (currentLocation.length > 0) {
-        word = guessList[Number(currentLocation)].toUpperCase();
+    } else {
+        word = guessList[Number(currentLocation.substring(11))].toUpperCase();
     }
-
     console.log(word);
     intialize();
 }
