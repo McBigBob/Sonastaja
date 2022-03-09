@@ -19,9 +19,9 @@ window.onload = function(){
     } 
     
     if (currentLocation.length > 0) {
-        word = wordList[Number(currentLocation)].toUpperCase();
+        word = guessList[Number(currentLocation)].toUpperCase();
     }
-    
+
     console.log(word);
     intialize();
 }
