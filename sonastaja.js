@@ -14,7 +14,7 @@ var word = ""
 
 window.onload = function() {
     var currentLocation = window.location.search.slice(1);
-    if (currentLocation.startsWith("väljakutse")) {
+    if (currentLocation.length > 11) {
         word = guessList[Number(currentLocation.slice(11))].toUpperCase();
         console.log("väljakutse");
     } else {
