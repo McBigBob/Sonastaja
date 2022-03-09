@@ -236,3 +236,7 @@ img {
     display: block;
     align-items: center;
 }
+
+.form-inline .form-control {
+    width: 200px;
+}
