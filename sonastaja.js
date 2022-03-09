@@ -14,7 +14,7 @@ var word = ""
 
 window.onload = function(){
     var currentLocation = window.location.search.substring(1);
-    if (currentLocation.startsWith("väljakutse=")) {
+    if (currentLocation.startsWith("väljakutse=") == true) {
         word = guessList[Number(currentLocation.substring(11))].toUpperCase();
     } else {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
