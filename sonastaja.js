@@ -15,10 +15,10 @@ var word = ""
 window.onload = function() {
     var currentLocation = window.location.search.slice(1);
     console.log(currentLocation)
-    //v%C3%A4ljakutse=
-    if (currentLocation.length > 16) {
+    //v%C3%A4ljakutse= (16)
+    if (currentLocation.length > 11) {
         try {
-            word = guessList[Number(currentLocation.slice(16))].toUpperCase();
+            word = guessList[Number(currentLocation.slice(11))].toUpperCase();
         } catch {
             word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
         }
@@ -36,7 +36,7 @@ function challange() {
         alert("Sõna ei sobi.");
         return;
     } else {
-        var dummy = $('<textarea id="kopeeri">').val("https://sonastaja.xyz/?väljakutse=" + guessList.indexOf(tekst)).appendTo('body').select();
+        var dummy = $('<textarea id="kopeeri">').val("https://sonastaja.xyz/?valjakutse=" + guessList.indexOf(tekst)).appendTo('body').select();
         document.execCommand('copy');
         kopeeri.remove();
         alert("Väljakutse link kopeeriti lõikelauale.");
