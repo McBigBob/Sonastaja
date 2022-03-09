@@ -239,4 +239,5 @@ img {
 
 .form-inline .form-control {
     width: 200px;
+    display: inline-block;
 }
