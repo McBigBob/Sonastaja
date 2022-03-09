@@ -12,18 +12,14 @@ var guessList = ["aabel", "aabsi", "aadam", "aadel", "aadet", "aadli", "aakre", 
 guessList = guessList.concat(wordList);
 var word = ""
 
-window.onload = function(){
-    var currentLocation = window.location.search;
-    if (currentLocation == "?") {
+window.onload = function() {
+    var currentLocation = window.location.search.slice(1);
+    if (currentLocation.startsWith("väljakutse")) {
+        word = guessList[Number(currentLocation.slice(11))].toUpperCase();
+    } else {
         word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
     }
-    if (currentLocation.length > 11) {
-        try {
-            word = guessList[Number(currentLocation.slice(12))].toUpperCase();
-        } catch {
-            word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
-        }
-    }
+
     console.log(word);
     intialize();
 }
