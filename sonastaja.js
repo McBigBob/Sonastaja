@@ -32,7 +32,9 @@ window.onload = function() {
 
 function challange() {
     var tekst = document.getElementById('chal').value.toLowerCase();
-    if (!guessList.includes(tekst)) {
+    if (tekst == "") {
+        return;
+    } if (!guessList.includes(tekst)) {
         alert("Sõna ei sobi.");
         return;
     } else {
